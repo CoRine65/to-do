@@ -1,6 +1,7 @@
 //import the needed files
+import './style.css';
 import Task from "./task";
-import { renderTask } from "./dom"; //what is this? 
+import { renderTask } from "./dom";
 
 const taskList = document.querySelector('ul');
 const tasks = [];//stores the tasks
@@ -15,7 +16,7 @@ const tasks = [];//stores the tasks
 
 //selecting the containers and what we are going to append to
 const form = document.getElementById('task-form');
-const mainContainer = document.getElementById('main-container');
+const tasksContainer = document.getElementById('tasks-container');
 
 form.addEventListener('submit', (e) =>{
     e.preventDefault(); 
@@ -31,7 +32,7 @@ form.addEventListener('submit', (e) =>{
     tasks.push(newTask);
 
     const taskElement = renderTask(newTask, tasks);
-    mainContainer.appendChild(taskElement);
+    tasksContainer.appendChild(taskElement);
 });
 
 

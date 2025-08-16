@@ -5,6 +5,11 @@ export function renderTask(task, tasks) {
     //creating the new elements dynamically
     const li = document.createElement("li");
 
+    //creating a header container
+    const header = document.createElement("div");
+    header.classList.add("task-header");
+
+
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.checked = task.completed;
@@ -32,10 +37,12 @@ export function renderTask(task, tasks) {
     })
 
     //appending each child to the list
-    li.appendChild(checkbox);
-    li.appendChild(label);
-    li.appendChild(date);
-    li.appendChild(priority);
+    header.appendChild(checkbox);
+    header.appendChild(label)
+    header.appendChild(date)
+    header.appendChild(priority)
+    
+    li.appendChild(header);
     li.appendChild(description);
     li.appendChild(deleteBtn);
 

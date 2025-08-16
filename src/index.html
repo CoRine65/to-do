@@ -6,37 +6,21 @@
     <title>To Do</title>
 </head>
 <body>
-    <h1>Tasks</h1>
     <div id="main-container">
-        
-        <!--
-        <div class="task-card">
-            <h2>Title</h2>
-            <p>Due: <span class="due-date">2025-08-29</span> | Priority: <span class="priority">High</span></p>
-            <ul>
-                <li>
-                    <input type="checkbox">
-                    <label>Example Task</label>
-                </li>
-            </ul>
-        </div>
-        -->
-        
-
         <!--dynamic form-->
         <form id="task-form">
             <input type="text" id="task-title" placeholder="Task name" required>
             <input type="date" id="task-date"> 
             <select id="task-priority">
                 <option>Low</option>
-                <option>Medium</option>
-                <option>High</option>
+                <option>Medium</option>                    <option>High</option>
             </select>
             <input type="text" id="task-description" placeholder="description" required>
-            <button type="submit">Add Task</button>
+            <button type="submit">Add Task</button>            
         </form>
 
-
+        <!--new tasks will be rendered here -->
+        <div id="tasks-container"></div>
 
 
 

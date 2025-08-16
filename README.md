@@ -57,3 +57,4 @@ Project start:
             - FIX: Naming convention issue, i was not calling it on the array tasks but rather the singular object task. 
 
 ------------ commit -------------
+8. Added CSS styling
