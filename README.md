@@ -29,3 +29,9 @@ Project start:
             - create: index.js task.js dom.js style.css
         - move out
     - create webpack.config.js
+
+---------------commit----------- 
+
+2. Creating a base html layout
+3. defined what a task is in its own module, with exportation in mind.
+4. moved to the dom, to render the next task
