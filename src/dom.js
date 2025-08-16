@@ -1,6 +1,6 @@
 //render the next tasks dyanmically 
 
-export function renderTask(task) {
+export function renderTask(task, tasks) {
 
     //creating the new elements dynamically
     const li = document.createElement("li");
@@ -21,12 +21,23 @@ export function renderTask(task) {
     const description = document.createElement("p");
     description.textContent = task.description;
 
+    //delete button
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = "Delete";
+    deleteBtn.addEventListener("click", () => {
+        li.remove(); //removes the DOM element
+        //removes from the task array
+        const index = tasks.indexOf(task);
+        if (index > -1) tasks.splice(index, 1);
+    })
+
     //appending each child to the list
     li.appendChild(checkbox);
     li.appendChild(label);
     li.appendChild(date);
     li.appendChild(priority);
     li.appendChild(description);
+    li.appendChild(deleteBtn);
 
     //updat task when the checkbox is toggled
     checkbox.addEventListener("change", () => {
@@ -35,4 +46,6 @@ export function renderTask(task) {
     });
     return li;
 
+
+    
 }
