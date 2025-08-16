@@ -1,6 +1,6 @@
 //render the next tasks dyanmically 
 
-export function renderTask(task, tasks) {
+export function renderTask(task, tasks, saveTasks) {
 
     //creating the new elements dynamically
     const li = document.createElement("li");
@@ -34,6 +34,7 @@ export function renderTask(task, tasks) {
         //removes from the task array
         const index = tasks.indexOf(task);
         if (index > -1) tasks.splice(index, 1);
+        saveTasks();
     })
 
     //appending each child to the list
@@ -49,7 +50,8 @@ export function renderTask(task, tasks) {
     //updat task when the checkbox is toggled
     checkbox.addEventListener("change", () => {
         task.toggleComplete();
-        label.style.textDecoration = task.completed ? "line-through" : "none"; //what is this?
+        label.style.textDecoration = task.completed ? "line-through" : "none"; 
+        saveTasks();
     });
     return li;
 

@@ -58,3 +58,32 @@ Project start:
 
 ------------ commit -------------
 8. Added CSS styling
+------------ commit -------------
+7. Updating to include local storage
+    - created: saveTasks, and loadTasks
+        - ERROR: wasn't passing saveTasks
+------------ commit -------------
+
+NOTES:
+
+Core concepts:
+- data lives in memory: array called tasks
+- UI mirros the data: DOM elements get rendered from tasks
+- persistence: localStorage saves and reloads tasks across session
+
+Modules and Responsibilities
+- index.js (controller /entry point)
+    - starts the app
+    - loads tasks from storage
+    - listens for form submissions
+    - passes tasks + saves to DOM renderer
+- task.js (Model)
+    - Defines what a Task object is (title, date, priority, description, completed)
+- dom.js (View / Renderer)
+    - Takes tasks and turns them into DOM nodes
+    - Renders checkboxes, delete buttons, etc.
+    - Handles UI event listeners (checkbox toggle, delete task)
+    - Calls back into saveTasks whenever data changes
+- localStorage (Persistence Layer)
+    - saveTasks(tasks) → serializes array to JSON and stores in browser
+    - loadTasks() → parses JSON back into an array on page load
